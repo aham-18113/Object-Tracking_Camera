@@ -26,10 +26,10 @@ void loop()
 
     if (inputString.endsWith("x"))
     {
-      if (vel > 2)
-        servo1.write(180, vel, false);
-      else if (vel < -2)
-        servo1.write(0, -vel, false);
+      if (vel > 0)
+        servo1.write(90 + vel, 255, false);
+      else if (vel < 0)
+        servo1.write(90 + vel, 255, false);
       else
       {
         pos = servo1.read();
@@ -38,10 +38,10 @@ void loop()
     }
     else if (inputString.endsWith("y"))
     {
-      if (vel > 2)
-        servo2.write(180, vel, false);
-      else if (vel < -2)
-        servo2.write(0, -vel, false);
+      if (vel > 0)
+        servo2.write(90 + vel, 255, false);
+      else if (vel < 0)
+        servo2.write(90 + vel, 255, false);
       else
       {
         pos = servo2.read();

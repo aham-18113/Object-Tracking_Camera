@@ -10,7 +10,7 @@ def set_res(cap, x, y):
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, int(y))
 
 
-ser = serial.Serial("COM3", 9600)  # change if serial is not COM3
+ser = serial.Serial("COM3", 250000)  # change if serial is not COM3
 
 cap = cv2.VideoCapture(0)
 
@@ -56,8 +56,8 @@ while True:
         face_center_x = faces[0, 0] + faces[0, 2] / 2
         face_center_y = faces[0, 1] + faces[0, 3] / 2
         # print(faces)
-        err_x = 30 * (face_center_x - frame_w / 2) / (frame_w / 2)
-        err_y = 30 * (face_center_y - frame_h / 2) / (frame_h / 2)
+        err_x = 300 * (face_center_x - frame_w / 2) / (frame_w / 2)
+        err_y = 300 * (face_center_y - frame_h / 2) / (frame_h / 2)
         ser.write((str(err_x) + "x!").encode())
         ser.write((str(err_y) + "y!").encode())
         print("X: ", err_x, " ", "Y: ", err_y)

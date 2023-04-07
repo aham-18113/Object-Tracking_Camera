@@ -11,7 +11,7 @@ from time import sleep
 # pwm = GPIO.PWM(servo_pin,50)
 
 import serial
-ser = serial.Serial("COM3", 9600)  # change if serial is not COM3
+ser = serial.Serial("COM3", 250000)  # change if serial is not COM3
 
 TrDict={'csrt':cv2.TrackerCSRT_create}
 tracker=TrDict['csrt']()
